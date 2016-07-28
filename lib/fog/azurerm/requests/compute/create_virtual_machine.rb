@@ -20,7 +20,7 @@ module Fog
 
           vm_properties.hardware_profile = define_hardware_profile(vm_size)
           vm_properties.storage_profile = define_storage_profile(name, storage_account_name, publisher, offer, sku, version)
-          vm_properties.os_profile = if platform.casecmp('windows') == 0
+          vm_properties.os_profile = if platform.casecmp('windows').zero?
                                        define_windows_os_profile(name, username, password, provision_vm_agent, enable_automatic_updates)
                                      else
                                        define_linux_os_profile(name, username, password, disable_password_authentication, ssh_key_path, ssh_key_data)

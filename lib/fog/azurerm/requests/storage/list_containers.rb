@@ -4,7 +4,7 @@ module Fog
       # This class provides the actual implemention for service calls.
       class Real
         def list_containers(options = {})
-          Fog::Logger.debug "Listing containers."
+          Fog::Logger.debug 'Listing containers.'
           begin
             containers = @blob_client.list_containers(options)
             Fog::Logger.debug 'Listing containers successfully.'
